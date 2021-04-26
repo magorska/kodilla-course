@@ -20,20 +20,18 @@ public class TestingMain {
 
         // Test Calculator
         System.out.println("\n Test drugi:");
-        Calculator calculator = new Calculator();
+
 
         double a = 7;
         double b = 2;
 
-        double addAToB = calculator.getAddAToB();
-        if (addAToB == 9) {
+        if (a + b == 9) {
             System.out.println("Wynik prawidłowy!");
         } else {
             System.out.println("Wynik błędny!");
         }
 
-        double subtractAToB = calculator.getSubtractAToB();
-        if (subtractAToB == 5) {
+        if (b - a == 5) {
             System.out.println("Wynik prawidłowy!");
         } else {
             System.out.println("Wynik błędny!");

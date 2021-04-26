@@ -6,14 +6,10 @@ public class Calculator {
         return a + b;
     }
 
-    public double getAddAToB() {
-        return addAToB;
-    }
+
     public double subtractAToB(double a, double b) {
         return b - a;
     }
 
-    public double getSubtractAToB() {
-        return subtractAToB;
-    }
+
 }
