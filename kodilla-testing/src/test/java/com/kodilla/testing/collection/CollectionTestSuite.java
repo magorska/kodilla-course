@@ -50,7 +50,7 @@ public class CollectionTestSuite {
         List<Integer> ifEvenNum = OddNumbersExterminator.exterminate(normalList);
         System.out.println("Testing" + normalList);
         // Then - sprawdzamy warunki ze metoda dziala poprawnie
-        Assertions.assertEquals(evenNum,normalList);
+        Assertions.assertEquals(evenNum,ifEvenNum);
     }
 
 
