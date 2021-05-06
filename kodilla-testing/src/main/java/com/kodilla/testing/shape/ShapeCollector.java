@@ -11,6 +11,10 @@ public class ShapeCollector {
         this.collection = collection;
     }
 
+    public ShapeCollector() {
+
+    }
+
     public void addFigure(Shape shape) {
         collection.add(shape);
     }
