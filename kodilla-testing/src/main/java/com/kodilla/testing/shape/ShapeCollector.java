@@ -19,8 +19,8 @@ public class ShapeCollector {
         collection.add(shape);
     }
 
-    public void removeFigure(Shape shape) {
-        collection.remove(shape);
+    public boolean removeFigure(Shape shape) {
+        return collection.remove(shape);
     }
 
     public Shape getFigure(int n) {
