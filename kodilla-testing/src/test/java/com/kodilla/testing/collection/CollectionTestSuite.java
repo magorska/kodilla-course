@@ -22,7 +22,8 @@ public class CollectionTestSuite {
         // Given - sytuacja, która zastajemy
         List<Integer> empty = new ArrayList<>();
         // When - sytuacja, ktora chcemy przetestowac. Nowa lista ktora odnosi sie do odpowiedniej klasy i metody (oraz listy ktora testujemy/otrzymalismy)
-        List<Integer> ifEmptyList = OddNumbersExterminator.exterminate(empty);
+        OddNumbersExterminator object = new OddNumbersExterminator();
+        List<Integer> ifEmptyList = object.exterminate(empty);
         System.out.println("Testing" + ifEmptyList);
         // Then - sprawdzamy warunki zapewniajace, ze metoda dziala poprawnie
         Assertions.assertEquals(empty,ifEmptyList);
@@ -40,14 +41,14 @@ public class CollectionTestSuite {
         normalList.add(22);
 
         List<Integer> evenNum = new ArrayList<>();
-        evenNum.add(2);
-        evenNum.add(6);
+        evenNum.add(4);
         evenNum.add(12);
-        evenNum.add(24);
-        evenNum.add(48);
+        evenNum.add(22);
+
 
         // When - nowa lista,ktora odnosi sie do odpowiedniej klasy i metody (oraz listy ktora testujemy/otrzymalismy)
-        List<Integer> ifEvenNum = OddNumbersExterminator.exterminate(normalList);
+        OddNumbersExterminator object = new OddNumbersExterminator();
+        List<Integer> ifEvenNum = object.exterminate(normalList);
         System.out.println("Testing" + normalList);
         // Then - sprawdzamy warunki ze metoda dziala poprawnie
         Assertions.assertEquals(evenNum,ifEvenNum);
