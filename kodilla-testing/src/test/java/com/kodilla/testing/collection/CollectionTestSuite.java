@@ -21,7 +21,7 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList() {
         // Given - sytuacja, która zastajemy
         List<Integer> empty = new ArrayList<>();
-        // When - sytuacja, ktora chcemy przetestowac. Nowa lista ktora odnosi sie do odpowiedniej klasy i metody (oraz listy ktora testujemy/otrzymalismy)
+        // When - sytuacja, ktora chcemy przetestowac. Nowa lista ktora odnosi sie do odpowiedniego obiektu i metody (oraz listy ktora testujemy/otrzymalismy)
         OddNumbersExterminator object = new OddNumbersExterminator();
         List<Integer> ifEmptyList = object.exterminate(empty);
         System.out.println("Testing" + ifEmptyList);

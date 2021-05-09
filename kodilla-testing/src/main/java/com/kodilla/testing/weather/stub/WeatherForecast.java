@@ -1,6 +1,8 @@
 package com.kodilla.testing.weather.stub;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class WeatherForecast {
@@ -22,4 +24,15 @@ public class WeatherForecast {
         }
         return resultMap;
     }
+//    public double averageOfTemperature() {
+//        List<Double> temperatures = new ArrayList<>();
+//
+//
+//        }
+//    }
+//    public double medianOfTemperatures() {
+//        List<Double> temperatures = new ArrayList<>();
+//
+//    }
+
 }
