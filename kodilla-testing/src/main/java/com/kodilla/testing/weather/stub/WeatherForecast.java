@@ -30,7 +30,17 @@ public class WeatherForecast {
         }
         return base / values.size();
     }
-
+    public double medianOfTemperatures() {
+        List<Double> values = temperatures.getValueOfTemperature();
+        Collections.sort(values);
+        if ( values.size() %2 == 0) {
+            double midValue = values.get(values.size() / 2);
+            double midValue2 = values.get(values.size() / 2 - 1);
+            return (midValue + midValue2) / 2;
+        } else {
+            return values.get(values.size() / 2);
+        }
+    }
 
 
 
