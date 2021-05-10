@@ -61,15 +61,5 @@ class WeatherForecastTestSuite {
         // Then
         Assertions.assertEquals(13.85, ifMedianOfTemperaturesIsEven, 0.01);
     }
-    @Test
-    void testMedianOfTemperaturesIdOdd() {
-        // Given
-        Temperatures valueOfTemperaturesMock = mock(Temperatures.class);
-        when(valueOfTemperaturesMock.getValueOfTemperature()).thenReturn(Arrays.asList(12.4, 14.1, 16.3, 14.3, 15.3));
-        WeatherForecast weatherForecast = new WeatherForecast(valueOfTemperaturesMock);
-        // When
-        Double ifMedianOfTemperaturesIdOdd = weatherForecast.medianOfTemperatures();
-        // Then
-        Assertions.assertEquals(14.3, ifMedianOfTemperaturesIdOdd, 0.01);
-    }
+
 }
