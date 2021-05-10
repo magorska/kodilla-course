@@ -36,6 +36,6 @@ public class ShapeCollector {
     }
 
     public int getSize() {
-        return -1;
+        return collection.size();
     }
 }

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,20 +43,33 @@ class WeatherForecastTestSuite {
     void testCalculateAverage() {
         // Given
         Temperatures valueOfTemperaturesMock = mock(Temperatures.class);
+        when(valueOfTemperaturesMock.getValueOfTemperature()).thenReturn(Arrays.asList(17.1, 34.7, 34.2, 16.2 ));
         WeatherForecast weatherForecast = new WeatherForecast(valueOfTemperaturesMock);
         // When
         Double ifAverageOfTemperature = weatherForecast.averageOfTemperature();
         // Then
-        Assertions.assertEquals(weatherForecast, ifAverageOfTemperature);
+        Assertions.assertEquals(25.55, ifAverageOfTemperature,0.01);
     }
     @Test
-    void testMedianOfTemperatures() {
+    void testMedianOfTemperaturesIfEven() {
         // Given
         Temperatures valueOfTemperaturesMock = mock(Temperatures.class);
+        when(valueOfTemperaturesMock.getValueOfTemperature()).thenReturn(Arrays.asList(12.4, 14.1, 16.3, 13.6));
         WeatherForecast weatherForecast = new WeatherForecast(valueOfTemperaturesMock);
         // When
-        Double ifMedianOfTemperatures = weatherForecast.medianOfTemperatures();
+        Double ifMedianOfTemperaturesIsEven = weatherForecast.medianOfTemperatures();
         // Then
-        Assertions.assertEquals(weatherForecast, ifMedianOfTemperatures);
+        Assertions.assertEquals(13.85, ifMedianOfTemperaturesIsEven, 0.01);
+    }
+    @Test
+    void testMedianOfTemperaturesIdOdd() {
+        // Given
+        Temperatures valueOfTemperaturesMock = mock(Temperatures.class);
+        when(valueOfTemperaturesMock.getValueOfTemperature()).thenReturn(Arrays.asList(12.4, 14.1, 16.3, 14.3, 15.3));
+        WeatherForecast weatherForecast = new WeatherForecast(valueOfTemperaturesMock);
+        // When
+        Double ifMedianOfTemperaturesIdOdd = weatherForecast.medianOfTemperatures();
+        // Then
+        Assertions.assertEquals(14.3, ifMedianOfTemperaturesIdOdd, 0.01);
     }
 }

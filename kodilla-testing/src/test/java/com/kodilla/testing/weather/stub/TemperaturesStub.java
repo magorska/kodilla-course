@@ -1,6 +1,7 @@
 package com.kodilla.testing.weather.stub;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TemperaturesStub implements Temperatures {
@@ -17,5 +18,10 @@ public class TemperaturesStub implements Temperatures {
         stubResult.put("Gdansk", 26.1);
 
         return stubResult;
+    }
+
+    @Override
+    public List<Double> getValueOfTemperature() {
+        return null;
     }
 }
