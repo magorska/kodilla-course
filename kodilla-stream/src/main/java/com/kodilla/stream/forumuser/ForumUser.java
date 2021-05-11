@@ -38,4 +38,8 @@ public final class ForumUser {
     public int getNumOfPosts() {
         return numOfPosts;
     }
+
+    public LocalDate getBirthdayDate() {
+        return birthDate;
+    }
 }
