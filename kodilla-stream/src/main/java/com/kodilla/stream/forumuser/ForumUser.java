@@ -45,12 +45,11 @@ public final class ForumUser {
 
     @Override
     public String toString() {
-        return "ForumUser{" +
-                "usersUniqueIdentyficator='" + usersUniqueIdentyficator + '\'' +
-                ", userName='" + userName + '\'' +
-                ", sex=" + sex +
-                ", birthDate=" + birthDate +
-                ", numOfPosts=" + numOfPosts +
-                '}';
+        return "ForumUser: " +
+                "identification = " + usersUniqueIdentyficator +
+                ", userName = " + userName +
+                ", sex = " + sex +
+                ", birthDate = " + birthDate +
+                ", numOfPosts = " + numOfPosts;
     }
 }

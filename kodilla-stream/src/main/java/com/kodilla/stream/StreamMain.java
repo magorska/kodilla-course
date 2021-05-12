@@ -119,14 +119,8 @@ public class StreamMain {
         System.out.println(theResultOfForumUser);
 
         theResultOfForumUser.entrySet().stream()
-                .map(entry -> entry.getKey() + ": " + entry.getValue())                   // [3]
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
-
-
-
-
-
-
 
     }
 }
