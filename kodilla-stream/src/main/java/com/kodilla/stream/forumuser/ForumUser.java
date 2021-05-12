@@ -42,4 +42,15 @@ public final class ForumUser {
     public LocalDate getBirthdayDate() {
         return birthDate;
     }
+
+    @Override
+    public String toString() {
+        return "ForumUser{" +
+                "usersUniqueIdentyficator='" + usersUniqueIdentyficator + '\'' +
+                ", userName='" + userName + '\'' +
+                ", sex=" + sex +
+                ", birthDate=" + birthDate +
+                ", numOfPosts=" + numOfPosts +
+                '}';
+    }
 }

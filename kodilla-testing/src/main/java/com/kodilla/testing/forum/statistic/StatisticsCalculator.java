@@ -1,10 +1,9 @@
-package com.kodilla.testing.statistic;
-
-import java.util.List;
+package com.kodilla.testing.forum.statistic;
 
 
 public class StatisticsCalculator {
-    private Statistic statistic;
+
+
     private int numOfUsers;
     private int numOfPosts;
     private int numOfComments;
@@ -12,9 +11,6 @@ public class StatisticsCalculator {
     private double averageOfCommentsPerUser;
     private double averageOfCommentsPerPost;
 
-    public StatisticsCalculator(Statistic statistic) {
-        this.statistic = statistic;
-    }
 
     public void calculateAdvStatistics(Statistic statistics) {
         numOfUsers = statistics.usersNames().size();
@@ -25,7 +21,7 @@ public class StatisticsCalculator {
         averageOfCommentsPerPost = calculateCommentsPerPost();
 
     }
-    private double calculatePostsPerUser() {
+    public double calculatePostsPerUser() {
         if (numOfUsers > 0) {
             double calculate = numOfPosts / numOfUsers;
             return calculate;
@@ -41,7 +37,7 @@ public class StatisticsCalculator {
             return 0;
         }
     }
-    private double calculateCommentsPerPost() {
+    public double calculateCommentsPerPost() {
         if (numOfUsers > 0) {
             double calculate = numOfComments/numOfPosts;
             return calculate;
@@ -56,5 +52,29 @@ public class StatisticsCalculator {
         System.out.println("Average number of posts per User: " + averageOfPostsPerUser);
         System.out.println("Average number of comments per User: " + averageOfCommentsPerUser);
         System.out.println("Average number of comments per post: " + averageOfCommentsPerPost);
+    }
+
+    public int getNumOfUsers() {
+        return numOfUsers;
+    }
+
+    public int getNumOfPosts() {
+        return numOfPosts;
+    }
+
+    public int getNumOfComments() {
+        return numOfComments;
+    }
+
+    public double getAverageOfPostsPerUser() {
+        return averageOfPostsPerUser;
+    }
+
+    public double getAverageOfCommentsPerUser() {
+        return averageOfCommentsPerUser;
+    }
+
+    public double getAverageOfCommentsPerPost() {
+        return averageOfCommentsPerPost;
     }
 }

@@ -11,6 +11,10 @@ public class Forum {
 
     private final List<ForumUser> usersList = new ArrayList<>();
 
+    public Forum() {
+        getUserList();
+    }
+
     public void getUserList() {
         usersList.add(new ForumUser("ide01", "Leigh", 'F', 1991, 06, 14, 3));
         usersList.add(new ForumUser("ide02", "Rick", 'M', 2002, 5, 30, 5));

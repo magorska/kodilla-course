@@ -88,18 +88,18 @@ public class StreamMain {
 //                .forEach(System.out::println);
 //        System.out.println("\n");
 //
-//        BookDirectory theBookDirectory3 = new BookDirectory();
-//
-//        Map<String, Book> theResultMapOfBooks = theBookDirectory3.getList().stream()
-//                .filter(book -> book.getYearOfPublication() > 2005)
-//                .collect(Collectors.toMap(Book::getSignature, book -> book));             // [1]
-//
-//        System.out.println("# elements: " + theResultMapOfBooks.size());             // [2]
-//        theResultMapOfBooks.entrySet().stream()
-//                .map(entry -> entry.getKey() + ": " + entry.getValue())                   // [3]
-//                .forEach(System.out::println);
-//        System.out.println("\n");
-//
+        BookDirectory theBookDirectory3 = new BookDirectory();
+
+        Map<String, Book> theResultMapOfBooks = theBookDirectory3.getList().stream()
+                .filter(book -> book.getYearOfPublication() > 2005)
+                .collect(Collectors.toMap(Book::getSignature, book -> book));             // [1]
+
+        System.out.println("# elements: " + theResultMapOfBooks.size());             // [2]
+        theResultMapOfBooks.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())                   // [3]
+                .forEach(System.out::println);
+        System.out.println("\n");
+
 //        BookDirectory theBookDirectory4 = new BookDirectory();
 //        String theResultStringOfBooks = theBookDirectory4.getList().stream()  // [1]
 //                .filter(book -> book.getYearOfPublication() > 2005)
@@ -116,9 +116,10 @@ public class StreamMain {
                 .filter(forumUser-> Period.between(forumUser.getBirthdayDate(), LocalDate.now()).getYears()>=20)
                 .filter(forumUser -> forumUser.getNumOfPosts()>1)
                 .collect(Collectors.toMap(ForumUser::getUsersUniqueIdentyficator, forumUser -> forumUser));
+        System.out.println(theResultOfForumUser);
 
         theResultOfForumUser.entrySet().stream()
-                .map(entry -> entry.getKey() + ": "+ entry.getValue())
+                .map(entry -> entry.getKey() + ": " + entry.getValue())                   // [3]
                 .forEach(System.out::println);
 
 
