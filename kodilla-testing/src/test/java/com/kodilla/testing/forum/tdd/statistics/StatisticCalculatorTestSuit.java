@@ -29,8 +29,8 @@ public class StatisticCalculatorTestSuit {
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         // Then
         Assertions.assertEquals(0, statisticsCalculator.getNumOfPosts());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfPostsPerUser());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerPost());
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfPostsPerUser(), 0.01);
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerPost(), 0.01);
     }
     @Test
     void testCalculateAdvStatisticWithThousandPosts() {
@@ -48,8 +48,8 @@ public class StatisticCalculatorTestSuit {
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         // Then
         Assertions.assertEquals(1000, statisticsCalculator.getNumOfPosts());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfPostsPerUser());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerPost());
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfPostsPerUser(), 0.01);
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerPost(), 0.01);
     }
     @Test
     void testCalculateAdvStatisticWithZeroComments() {
@@ -67,8 +67,8 @@ public class StatisticCalculatorTestSuit {
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         // Then
         Assertions.assertEquals(0, statisticsCalculator.getNumOfComments());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerUser());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerPost());
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerUser(),0.01);
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerPost(), 0.01);
     }
     @Test
     void testCalculateAdvStatisticWithLessCommentsThanPosts() {
@@ -82,7 +82,7 @@ public class StatisticCalculatorTestSuit {
         // Then
         Assertions.assertEquals(5, statisticsCalculator.getNumOfComments());
         Assertions.assertEquals(10, statisticsCalculator.getNumOfPosts());
-        Assertions.assertEquals(0.5, statisticsCalculator.getAverageOfCommentsPerPost());
+        Assertions.assertEquals(0.5, statisticsCalculator.getAverageOfCommentsPerPost(), 0.01);
     }
     @Test
     void testCalculateAdvStatisticWithMoreCommentsThanPosts() {
@@ -96,7 +96,7 @@ public class StatisticCalculatorTestSuit {
         // Then
         Assertions.assertEquals(10, statisticsCalculator.getNumOfComments());
         Assertions.assertEquals(5, statisticsCalculator.getNumOfPosts());
-        Assertions.assertEquals(2.0, statisticsCalculator.getAverageOfCommentsPerPost());
+        Assertions.assertEquals(2.0, statisticsCalculator.getAverageOfCommentsPerPost(), 0.01);
     }
     @Test
     void testCalculateAdvStatisticWithZeroUsers() {
@@ -111,8 +111,8 @@ public class StatisticCalculatorTestSuit {
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         // Then
         Assertions.assertEquals(0, statisticsCalculator.getNumOfUsers());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerUser());
-        Assertions.assertEquals(0, statisticsCalculator.getAverageOfPostsPerUser());
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfCommentsPerUser(), 0.01);
+        Assertions.assertEquals(0, statisticsCalculator.getAverageOfPostsPerUser(), 0.01);
     }
     @Test
     void testCalculateAdvStatisticWithHundredsUsers() {
@@ -130,15 +130,8 @@ public class StatisticCalculatorTestSuit {
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         // Then
         Assertions.assertEquals(100, statisticsCalculator.getNumOfUsers());
-        Assertions.assertEquals(1.2, statisticsCalculator.getAverageOfCommentsPerUser());
-        Assertions.assertEquals(1.0, statisticsCalculator.getAverageOfPostsPerUser());
+        Assertions.assertEquals(1.2, statisticsCalculator.getAverageOfCommentsPerUser(), 0.01);
+        Assertions.assertEquals(1.0, statisticsCalculator.getAverageOfPostsPerUser(), 0.01);
     }
-
-
-
-
-
-
-
 
 }
