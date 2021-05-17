@@ -23,7 +23,7 @@ public class StatisticsCalculator {
     }
     public double calculatePostsPerUser() {
         if (numOfUsers > 0) {
-            double calculate = numOfPosts / numOfUsers;
+            double calculate = numOfPosts /(double) numOfUsers;
             return calculate;
         } else {
             return 0;
@@ -31,15 +31,16 @@ public class StatisticsCalculator {
     }
     private double calculateCommentsPerUser() {
         if (numOfUsers > 0) {
-            double calculate = numOfComments/numOfUsers;
+            double calculate = numOfComments/(double) numOfUsers;
             return calculate;
         } else {
             return 0;
         }
     }
     public double calculateCommentsPerPost() {
-        if (numOfUsers > 0) {
-            double calculate = numOfComments/numOfPosts;
+        System.out.println(numOfComments + " " + numOfPosts);
+        if (numOfPosts > 0) {
+            double calculate = numOfComments/( double) numOfPosts;
             return calculate;
         } else {
             return 0;
