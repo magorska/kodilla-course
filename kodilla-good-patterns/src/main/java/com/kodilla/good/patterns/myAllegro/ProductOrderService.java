@@ -2,10 +2,10 @@ package com.kodilla.good.patterns.myAllegro;
 
 import java.time.LocalDateTime;
 
-public class ProductOrderService {
+public class ProductOrderService implements OrderService{
 
-    public boolean order(final User user, final LocalDateTime orderData, final Product product) {
+    @Override
+    public boolean sold(User user, LocalDateTime orderDate, Product product, int quantity) {
         return true;
     }
-
 }

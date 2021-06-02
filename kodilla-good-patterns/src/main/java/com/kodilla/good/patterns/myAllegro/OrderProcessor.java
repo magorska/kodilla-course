@@ -13,6 +13,7 @@ public class OrderProcessor {
         this.orderRepository = orderRepository;
     }
 
+
     public OrderDto process(final OrderRequest orderRequest) {
         boolean isConfirmed = orderService.sold(orderRequest.getUser(), orderRequest.getTimeOfOrdering(),
                 orderRequest.getProduct(), orderRequest.getQuantity());
