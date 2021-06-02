@@ -6,7 +6,8 @@ public class OrderProcessor {
     private OrderService orderService;
     private OrderRepository orderRepository;
 
-    public OrderProcessor(InformationService informationService, OrderService orderService, OrderRepository orderRepository) {
+    public OrderProcessor(InformationService informationService, OrderService orderService,
+                          OrderRepository orderRepository) {
         this.informationService = informationService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;
@@ -19,10 +20,12 @@ public class OrderProcessor {
             informationService.inform(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser(),orderRequest.getTimeOfOrdering(),
                     orderRequest.getProduct(), orderRequest.getQuantity());
-            return new OrderDto(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getQuantity(), true);
+            return new OrderDto(orderRequest.getUser(), orderRequest.getProduct(),
+                    orderRequest.getQuantity(), true);
         } else {
             System.out.println("Sorry, we can't confirm your order");
-            return new OrderDto(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getQuantity(), false);
+            return new OrderDto(orderRequest.getUser(), orderRequest.getProduct(),
+                    orderRequest.getQuantity(), false);
         }
     }
 }

@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.myAllegro;
 
-import com.kodilla.good.patterns.program.RentRequest;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
