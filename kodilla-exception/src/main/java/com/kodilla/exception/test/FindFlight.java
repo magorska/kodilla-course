@@ -1,11 +1,10 @@
 package com.kodilla.exception.test;
 
-import java.lang.reflect.MalformedParameterizedTypeException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class FindFlight {
-    private Map<String, Boolean> flightBoard; //uzupełnić
+    private Map<String, Boolean> flightBoard;
 
     public boolean findFlight(Flight flight) throws RouteNotFoundException {
 //        if (flightBoard.containsKey(flight.getArrivalAirport())) {// sprawdzamy czy miasto istnieje
