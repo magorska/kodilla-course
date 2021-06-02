@@ -22,6 +22,15 @@ public class HealthyShop implements SupplierProcess{
 
     @Override
     public boolean process(Supplier supplier, Map<Product, Integer> productsList) {
+        int quantity = 0;
+
+        for(Map.Entry<Product, Integer> value : productsList.entrySet())
+            quantity = productsList.get(value.getValue());
+
+        if (quantity == 0) {
+            System.out.println(supplier + ": Sorry, some of products are not available.");
+            return false;
+        }
         return true;
     }
 }
