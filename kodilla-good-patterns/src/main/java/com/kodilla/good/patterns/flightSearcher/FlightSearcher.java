@@ -27,19 +27,13 @@ public class FlightSearcher {
         return availableFlights;
     }
 
-    public Set<Flights> connectingAvailableFlights(String departureAirport, String connectingAirport,
-                                                   String arrivalAirport) {
-
-        availableFlights.stream()
-                .filter(flights -> flights.getDepartureAirport().equals(departureAirport))
-                .filter(flights -> flights.getArrivalAirport().equals(connectingAirport))
-                .collect(Collectors.toSet());
-
-        availableFlights.stream()
-                .filter(flights -> flights.getDepartureAirport().equals(connectingAirport))
-                .filter(flights -> flights.getArrivalAirport().equals(arrivalAirport))
-                .collect(Collectors.toSet())
-                .forEach(System.out::println);
-        return availableFlights;
-    }
+//    public Set<Flights> connectingAvailableFlights(String departureAirport, String arrivalAirport) {
+//
+//        Set<Flights> connectedFlights = availableFlights.stream()
+//                .filter(flights -> flights.getDepartureAirport().equals(departureAirport))
+//                .filter(flights -> flights.getArrivalAirport().equals(connectingAirport))
+//                .collect(Collectors.toSet())
+//                .forEach(System.out::println);
+//        return availableFlights;
+//    }
 }
