@@ -7,26 +7,30 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class BoardConfig {
 
+    private TaskList toDoList;
+    private TaskList inProgressList;
+    private TaskList doneList;
+
     @Bean
-    public Board board() {
-        return new Board(toDoList(), inProgressList(), doneList());
+    public Board getBoard() {
+        return new Board(toDoList, inProgressList, doneList);
     }
 
     @Bean
     @Scope("prototype")
-    public TaskList toDoList(){
+    public TaskList getToDoList() {
         return new TaskList();
     }
 
     @Bean
     @Scope("prototype")
-    public TaskList inProgressList(){
+    public TaskList getInProgressList() {
         return new TaskList();
     }
 
     @Bean
     @Scope("prototype")
-    public TaskList doneList(){
+    public TaskList getDoneList() {
         return new TaskList();
     }
 }

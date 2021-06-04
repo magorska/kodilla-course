@@ -1,7 +1,6 @@
 package com.kodilla.patterns.singleton;
 
 public enum SettingFileEngine {
-
     INSTANCE;
 
     private String fileName = "";
@@ -29,5 +28,4 @@ public enum SettingFileEngine {
         System.out.println("Saving settings to file");
         return true;
     }
-
 }
