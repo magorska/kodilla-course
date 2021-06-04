@@ -12,6 +12,13 @@ public class AvailableFlights {
     }
 
     public Set<Flights> getAvailableFlights() {
+
+        availableFlights.add(new Flights("WAW", "GDA"));
+        availableFlights.add(new Flights("GDA", "WRO"));
+        availableFlights.add(new Flights("GDA", "KAT"));
+        availableFlights.add(new Flights("WAW", "KRK"));
+        availableFlights.add(new Flights("WRO", "KRK"));
+
         return availableFlights;
     }
 }
