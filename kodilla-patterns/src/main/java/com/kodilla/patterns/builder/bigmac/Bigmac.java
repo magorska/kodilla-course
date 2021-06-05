@@ -41,7 +41,7 @@ public class Bigmac {
         this.bun = bun;
         this.burgers = burgers;
         this.sauce = sauce;
-        this.ingredients = ingredients;
+        this.ingredients = new ArrayList<>(ingredients);
     }
     @Override
     public String toString() {
