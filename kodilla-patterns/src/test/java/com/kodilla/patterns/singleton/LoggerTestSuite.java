@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class LoggerTestSuite {
 
     @Test
-    void getLastLodTest() {
+    void getLastLogTest() {
         // Given
         Logger.INSTANCE.log("First log");
         // When
