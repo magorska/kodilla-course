@@ -33,5 +33,19 @@ public class UserTestSuite {
     @Test
     void testIndividualSharingStrategy() {
 
+        //Given
+        User jessica = new Millenials("Jessica");
+
+        //When
+        String jessicaUses = jessica.sharePost();
+        System.out.println("Jessica says: " + jessicaUses);
+        jessica.setSocialPublisher(new FacebookPublisher());
+        jessicaUses = jessica.sharePost();
+        System.out.println("Jessica doesn't say: " + jessicaUses);
+
+        //Then
+        Assertions.assertEquals("Facebook is favourite app of YGeneration", jessicaUses);
+
+
     }
 }
