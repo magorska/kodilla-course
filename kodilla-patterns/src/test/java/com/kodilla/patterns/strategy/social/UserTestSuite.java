@@ -26,8 +26,6 @@ public class UserTestSuite {
         Assertions.assertEquals("Facebook is favourite app of YGeneration", michaelUses);
         Assertions.assertEquals("Twitter is favourite app of ZGeneration", richardUses);
 
-
-
     }
 
     @Test
@@ -45,7 +43,5 @@ public class UserTestSuite {
 
         //Then
         Assertions.assertEquals("Facebook is favourite app of YGeneration", jessicaUses);
-
-
     }
 }

@@ -5,6 +5,7 @@ public class DrivingTask implements Task {
     private String taskName;
     private String where;
     private String using;
+    private boolean isDone = true;
 
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
@@ -13,8 +14,7 @@ public class DrivingTask implements Task {
     }
 
     @Override
-    public String executeTask() {
-        return "To do in within: next Sunday";
+    public void executeTask() {
     }
 
     @Override
@@ -24,6 +24,6 @@ public class DrivingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+        return isDone;
     }
 }

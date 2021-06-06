@@ -4,6 +4,7 @@ public class ShoppingTask implements Task{
     private String taskName;
     private String whatToBuy;
     private double quantity;
+    private boolean isDone;
 
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
@@ -12,8 +13,7 @@ public class ShoppingTask implements Task{
     }
 
     @Override
-    public String executeTask() {
-        return "To do in within: 2 days";
+    public void executeTask() {
     }
 
     @Override
@@ -23,6 +23,6 @@ public class ShoppingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-        return true;
+        return isDone;
     }
 }
