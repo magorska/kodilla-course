@@ -15,6 +15,7 @@ public class PaintingTask implements Task {
 
     @Override
     public void executeTask() {
+        isDone = true;
     }
 
     @Override

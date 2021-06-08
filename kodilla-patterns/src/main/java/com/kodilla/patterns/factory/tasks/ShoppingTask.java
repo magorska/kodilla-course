@@ -14,6 +14,7 @@ public class ShoppingTask implements Task{
 
     @Override
     public void executeTask() {
+        isDone = true;
     }
 
     @Override

@@ -15,6 +15,7 @@ public class DrivingTask implements Task {
 
     @Override
     public void executeTask() {
+        isDone=false;
     }
 
     @Override
