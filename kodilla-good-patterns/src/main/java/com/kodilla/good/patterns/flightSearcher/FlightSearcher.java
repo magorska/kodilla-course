@@ -43,6 +43,7 @@ public class FlightSearcher {
             for (Flights middleAirport : endAirport) {
                 if (middleAirport.getDepartureAirport().equals(airport.getArrivalAirport())
                         && !airport.getDepartureAirport().equals(middleAirport.getArrivalAirport())) {
+                    connectedFlightsList.add(airport);
                     connectedFlightsList.add(middleAirport);
                 }
             }
