@@ -37,7 +37,7 @@ public class Product {
     }
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "itemsList")
+    @OneToMany(cascade = CascadeType.ALL)
     public List<Item> getItemsList() {
         return itemsList;
     }
