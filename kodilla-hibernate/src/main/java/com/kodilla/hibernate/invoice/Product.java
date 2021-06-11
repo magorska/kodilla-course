@@ -13,7 +13,7 @@ public class Product {
 
     private int id;
     private String name;
-    private List<Item> itemsList = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
     public Product() {
     }
@@ -38,8 +38,8 @@ public class Product {
 
 
     @OneToMany(cascade = CascadeType.ALL)
-    public List<Item> getItemsList() {
-        return itemsList;
+    public List<Item> getItems() {
+        return items;
     }
 
     private void setId(int id) {
@@ -50,7 +50,7 @@ public class Product {
         this.name = name;
     }
 
-    private void setItemsList(List<Item> itemsList) {
-        this.itemsList = itemsList;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }

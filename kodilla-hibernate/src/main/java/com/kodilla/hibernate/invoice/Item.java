@@ -70,7 +70,7 @@ public class Item {
         this.product = product;
     }
 
-    private void setPrice(BigDecimal price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -81,7 +81,7 @@ public class Item {
     private void setValue(BigDecimal value) {
         this.value = value;
     }
-    private void setInvoice(Invoice invoice) {
+    public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }
 

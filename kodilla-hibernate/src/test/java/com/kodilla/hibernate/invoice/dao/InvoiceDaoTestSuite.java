@@ -32,9 +32,23 @@ public class InvoiceDaoTestSuite {
         Item item3 = new Item(product3, new BigDecimal(5.99), 6, new BigDecimal(35.94));
         Item item4 = new Item(product4, new BigDecimal(4.99), 1, new BigDecimal(4.99));
 
+        item1.setProduct(product1);
+        item2.setProduct(product2);
+        item3.setProduct(product3);
+        item4.setProduct(product4);
+
         List<Item> itemsList = new ArrayList<>();
+        itemsList.add(item1);
+        itemsList.add(item2);
+        itemsList.add(item3);
+        itemsList.add(item4);
 
         Invoice invoice= new Invoice("Invoice number: 15/06/2021", itemsList);
+
+        item1.setInvoice(invoice);
+        item2.setInvoice(invoice);
+        item3.setInvoice(invoice);
+        item4.setInvoice(invoice);
 
         //When
 
