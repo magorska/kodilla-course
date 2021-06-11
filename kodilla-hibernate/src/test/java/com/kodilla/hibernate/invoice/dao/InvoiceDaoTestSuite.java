@@ -31,12 +31,12 @@ public class InvoiceDaoTestSuite {
         Item item3 = new Item(product3, new BigDecimal(5.99), 6, new BigDecimal(35.94));
         Item item4 = new Item(product4, new BigDecimal(4.99), 1, new BigDecimal(4.99));
 
-        product1.getItemsList().add(item1);
-        product2.getItemsList().add(item2);
-        product3.getItemsList().add(item3);
-        product4.getItemsList().add(item4);
+        List<Item> itemsList = new ArrayList<>();
+
+        Invoice invoice= new Invoice("Invoice number: 15/06/2021", itemsList);
 
         //When
+
 
         //Then
 
