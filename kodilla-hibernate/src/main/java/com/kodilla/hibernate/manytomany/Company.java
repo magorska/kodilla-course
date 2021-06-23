@@ -5,6 +5,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.retrieveThreeLettersOfCompanyName",
+        query = "SELECT * FROM companies " +
+                "WHERE LEFT(company_name, 3) = :NAME"
+)
 
 @Entity
 @Table(name = "COMPANIES")

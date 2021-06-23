@@ -6,10 +6,12 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @NamedQuery(
-        name = "Employee.retrieveEmployeeWithLastname",
-        query = "FROM Employee WHERE lastname = :LASTNAME"
-)
+                name = "Employee.retrieveEmployeeWithLastname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        )
+
 
 @Entity
 @Table(name = "EMPLOYEES")
