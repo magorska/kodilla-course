@@ -7,10 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
 class CompanyDaoTestSuite {
@@ -104,6 +103,13 @@ class CompanyDaoTestSuite {
         //Then
         Assertions.assertEquals(1, employees.size());
         Assertions.assertEquals(1, companies.size());
+
+        //Clean up
+        int idEmployee = employees.get(0).getId();
+        employeeDao.deleteById(idEmployee);
+
+        int idCompany = companies.get(0).getId();
+        companyDao.deleteById(idCompany);
 
     }
 }
