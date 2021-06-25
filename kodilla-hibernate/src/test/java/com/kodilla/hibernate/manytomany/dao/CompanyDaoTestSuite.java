@@ -105,11 +105,14 @@ class CompanyDaoTestSuite {
         Assertions.assertEquals(1, companies.size());
 
         //Clean up
-        int idEmployee = employees.get(0).getId();
-        employeeDao.deleteById(idEmployee);
+        try {
+            companyDao.delete(softwareMachine);
+            companyDao.delete(dataMaesters);
+            companyDao.delete(greyMatter);
+        } catch (Exception e) {
+            //do nothing
+        }
 
-        int idCompany = companies.get(0).getId();
-        companyDao.deleteById(idCompany);
 
     }
 }
