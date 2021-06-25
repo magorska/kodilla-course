@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @EnableAspectJAutoProxy
 public class OrderFacade {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderFacade.class);
-    private ShopService shopService;
+    private final ShopService shopService;
 
     @Autowired
     public OrderFacade(ShopService shopService) {
