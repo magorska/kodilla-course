@@ -6,12 +6,17 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQueries({
 
 @NamedQuery(
-                name = "Employee.retrieveEmployeeWithLastname",
-                query = "FROM Employee WHERE lastname = :LASTNAME"
-        )
-
+        name = "Employee.retrieveEmployeeWithLastname",
+        query = "FROM Employee WHERE lastname = :LASTNAME"
+),
+@NamedQuery(
+        name = "Employee.retrieveEmployeesWithSearchedString",
+        query = "FROM Employee WHERE firstname LIKE CONCAT('%',:SEARCHEDSTRING,'%')"
+)
+})
 
 @Entity
 @Table(name = "EMPLOYEES")

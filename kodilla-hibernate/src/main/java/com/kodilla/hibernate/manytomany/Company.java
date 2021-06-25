@@ -11,6 +11,11 @@ import java.util.List;
                 "WHERE LEFT(company_name, 3) = :NAME"
 )
 
+@NamedQuery(
+        name = "Company.retrieveCompaniesWithSearchedString",
+        query = "FROM Company WHERE name LIKE CONCAT('%',:SEARCHEDSTRING,'%')"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
