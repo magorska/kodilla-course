@@ -13,7 +13,7 @@ public class OrderWatcher {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderWatcher.class);
 
-    @After("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder())")
+    @After("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))")
     public void logEvent() {
         LOGGER.info("Logging the event");
     }

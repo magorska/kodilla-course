@@ -7,10 +7,12 @@ import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
+@SpringBootTest
 class SearchingFacadeTest {
 
     @Autowired
@@ -21,9 +23,6 @@ class SearchingFacadeTest {
 
     @Autowired
     private SearchingFacade searchingFacade;
-
-    private List<Company> companyList = new ArrayList<>();
-    private List<Employee> employeeList = new ArrayList<>();
 
     @Test
     void TestCompanyAndEmployeeSearchString() {
@@ -56,10 +55,13 @@ class SearchingFacadeTest {
         employeeDao.save(stephanieClarckson);
         employeeDao.save(lindaKovalsky);
 
+        List<Company> companyList = new ArrayList<>();
 
         companyList.add(softwareMachine);
         companyList.add(greyMatter);
         companyList.add(dataMaesters);
+
+        List<Employee> employeeList = new ArrayList<>();
 
         employeeList.add(johnSmith);
         employeeList.add(stephanieClarckson);
@@ -70,16 +72,19 @@ class SearchingFacadeTest {
         List<Employee> testListEmployee = searchingFacade.retrieveEmployeesWithSearchedString("Ste");
 
         //Then
-        Assertions.assertEquals(companyList.size(), testListCompany.size());
-        Assertions.assertEquals(employeeList.size(), testListEmployee.size());
+        Assertions.assertEquals(1, testListCompany.size());
+        Assertions.assertEquals(1, testListEmployee.size());
+
+        //Clean up
+      try {
+        companyDao.delete(softwareMachine);
+        companyDao.delete(dataMaesters);
+        companyDao.delete(greyMatter);
+    } catch (Exception e) {
+        //do nothing
     }
-    //Clean up
-//      try {
-//        companyDao.delete(softwareMachine);
-//        companyDao.delete(softDataMasters);
-//        companyDao.delete(greyMatter);
-//    } catch (Exception e) {
-//        //do nothing
-//    }
+    }
+
+
 
 }
