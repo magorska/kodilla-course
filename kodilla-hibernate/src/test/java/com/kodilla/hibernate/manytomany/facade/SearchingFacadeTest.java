@@ -80,9 +80,9 @@ class SearchingFacadeTest {
         companyDao.delete(softwareMachine);
         companyDao.delete(dataMaesters);
         companyDao.delete(greyMatter);
-    } catch (Exception e) {
+      } catch (Exception e) {
         //do nothing
-    }
+          }
     }
 
 
