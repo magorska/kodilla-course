@@ -11,7 +11,7 @@ public class KodillaHomeworkTestSuite {
 
         //Given
         KodillaHomework task1 = new KodillaHomework("23.1 Facade");
-        KodillaHomework task2 = new KodillaHomework("23.2 Decotator");
+        KodillaHomework task2 = new KodillaHomework("23.2 Decorator");
         KodillaHomework task3 = new KodillaHomework("23.3 Aspect");
         KodillaHomework task4 = new KodillaHomework("23.4 Observer");
         KodillaHomework task5 = new KodillaHomework("23.5 Adapter");
@@ -43,15 +43,11 @@ public class KodillaHomeworkTestSuite {
         emli.update(task4);
         same.update(task5);
 
+
+
         //Then
         Assertions.assertEquals(2, dama.getUpdateCount());
         Assertions.assertEquals(3, rima.getUpdateCount());
-
-
-
-
-
-
 
     }
 }

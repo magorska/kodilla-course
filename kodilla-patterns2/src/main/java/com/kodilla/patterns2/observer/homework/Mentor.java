@@ -21,5 +21,6 @@ public class Mentor implements Observer {
         System.out.println(mentorName + ": New task to check from: in Kodilla Homework: " + kodillaHomework.getName()
                 + "\n" + " (total: " + kodillaHomework.getTasks().size() + " tasks)"
                 + "\n" + "New messages: " + kodillaHomework.getMessages().size());
+        updateCount++;
     }
 }

@@ -19,10 +19,10 @@ public class SearchingFacade {
     private EmployeeDao employeeDao;
 
     public List<Company> retrieveCompaniesWithSearchedString(String searchedString) {
-        return companyDao.retrieveThreeLettersOfCompanyName(searchedString);
+        return companyDao.retrieveCompaniesWithSearchedString(searchedString);
     }
 
     public List<Employee> retrieveEmployeesWithSearchedString(String searchedString) {
-        return employeeDao.retrieveEmployeeWithLastname(searchedString);
+        return employeeDao.retrieveEmployeesWithSearchedString(searchedString);
     }
 }

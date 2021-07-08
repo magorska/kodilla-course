@@ -21,6 +21,7 @@ public class Student implements Observer {
         System.out.println(studentName + ": New task in Kodilla Homework: " + kodillaHomework.getName()
                 + "\n" + " (total: " + kodillaHomework.getTasks().size() + " tasks)"
                 + "\n" + "New messages: " + kodillaHomework.getMessages().size());
+        kodillaHomework.notifyObservers();
         updateCount++;
     }
 }

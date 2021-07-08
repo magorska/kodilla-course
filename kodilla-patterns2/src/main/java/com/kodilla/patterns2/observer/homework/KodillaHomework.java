@@ -5,7 +5,7 @@ import java.util.List;
 
 public class KodillaHomework implements Observable {
 
-    private final List<com.kodilla.patterns2.observer.homework.Observer> observers;
+    private final List<Observer> observers;
     private final List<String> tasks;
     private final List<String> messages;
     private final String name;
@@ -35,7 +35,7 @@ public class KodillaHomework implements Observable {
     }
 
     @Override
-    public void registerObserver(com.kodilla.patterns2.observer.homework.Observer observer) {
+    public void registerObserver(Observer observer) {
 
         observers.add(observer);
     }
@@ -48,7 +48,7 @@ public class KodillaHomework implements Observable {
     }
 
     @Override
-    public void removeObserver(com.kodilla.patterns2.observer.homework.Observer observer) {
+    public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 }
