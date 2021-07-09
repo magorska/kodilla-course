@@ -1,0 +1,23 @@
+USE kodilla;
+
+#index for BOOKS
+CREATE INDEX BOOK_SEARCH ON books (TITLE);
+
+#index for READERS
+CREATE INDEX USER_SEARCH ON readers(FIRSTNAME, LASTNAME);
+
+--
+
+#before adding index
+EXPLAIN SELECT *
+    FROM readers
+    WHERE FIRSTNAME = 'John';
+
+#creating index
+CREATE INDEX USER_SEARCH ON readers(FIRSTNAME, LASTNAME);
+
+#after adding index
+EXPLAIN SELECT *
+        FROM READERS
+        WHERE FIRSTNAME='John';
+
