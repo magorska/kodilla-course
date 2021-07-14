@@ -14,7 +14,7 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-class CruddAppTestSuite {
+class CrudAppTestSuite {
 
     private static final String BASE_URL = "https://magorska.github.io/";
     private WebDriver driver;
@@ -48,6 +48,9 @@ class CruddAppTestSuite {
 
         WebElement addButton = driver.findElement(By.xpath(XPATH_ADD_BUTTON));
         addButton.click();
+
+        driver.switchTo().alert().accept();
+
         Thread.sleep(2000);
 
         return taskName;
@@ -72,6 +75,7 @@ class CruddAppTestSuite {
                             theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]"));
                     buttonCreateCard.click();
                 });
+
         Thread.sleep(5000);
     }
 
@@ -82,7 +86,6 @@ class CruddAppTestSuite {
         driverTrello.get(TRELLO_URL);
 
         driverTrello.findElement(By.id("user")).sendKeys("magorska.95@gmail.com");
-        driverTrello.findElement(By.id("password")).sendKeys("acotar95");
         WebElement el = driverTrello.findElement(By.id("login"));
         el.submit();
 
@@ -93,8 +96,8 @@ class CruddAppTestSuite {
 
         Thread.sleep(4000);
 
-        driverTrello.findElements(By.xpath("//a[@class=\"board-title\"]")).stream()
-                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Kodilla Application\"]")).size() > 0)
+        driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
+                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Things to do\"]")).size() > 0)
                 .forEach(WebElement::click);
 
         Thread.sleep(4000);
@@ -107,8 +110,27 @@ class CruddAppTestSuite {
         return result;
     }
 
-    private void deleteCrudAppTestTask(String taskName) {
+    private void deleteCrudAppTestTask(String taskName) throws InterruptedException {
+        driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
+        driver.get(BASE_URL);
 
+        while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());
+
+        driver.findElements(
+                By.xpath("//form[@class=\"datatable__row\"]")).stream()
+                .filter(anyForm ->
+                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
+                                .getText().equals(taskName))
+                .forEach(theForm -> {
+                    WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
+                    Select select = new Select(selectElement);
+                    select.selectByIndex(1);
+
+                    WebElement deleteCard =
+                            theForm.findElement(By.xpath(".//button[contains(@class, \"datatable__button\")]"));
+                    deleteCard.click();
+                });
+        Thread.sleep(2000);
     }
 
     @Test
