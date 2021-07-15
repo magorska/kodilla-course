@@ -49,8 +49,6 @@ class CrudAppTestSuite {
         WebElement addButton = driver.findElement(By.xpath(XPATH_ADD_BUTTON));
         addButton.click();
 
-        driver.switchTo().alert().accept();
-
         Thread.sleep(2000);
 
         return taskName;
@@ -77,6 +75,10 @@ class CrudAppTestSuite {
                 });
 
         Thread.sleep(5000);
+
+                driver.switchTo().alert().accept();
+
+        Thread.sleep(3000);
     }
 
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
