@@ -129,7 +129,7 @@ class CrudAppTestSuite {
                     select.selectByIndex(1);
 
                     WebElement deleteCard =
-                            theForm.findElement(By.xpath(".//button[contains(@class, \"datatable__button\")]"));
+                            theForm.findElement(By.xpath(".//button[4]"));
                     deleteCard.click();
                 });
         Thread.sleep(2000);
